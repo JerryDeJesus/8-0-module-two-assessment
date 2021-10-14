@@ -1,3 +1,4 @@
+let select = document.querySelector("#movie-select");
 
 fetch("https://ghibliapi.herokuapp.com/films")
     .then((res)=>{
@@ -10,7 +11,20 @@ fetch("https://ghibliapi.herokuapp.com/films")
             let newOption = document.createElement("option");
             newOption.textContent = movieTitle[0].toUpperCase() + movieTitle.slice(1);
             newOption.value = movieTitle;
-            let select = document.querySelector("#movie-select");
             select.append(newOption);
         }
+        let form = document.querySelector("form");
+    form.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        let chosenMovie = e.target["movie-select"].value;
+        let display = document.querySelector("#display-info");
+        display.innerHTML = `
+            <h3>${chosenMovie}</h3>
+            <p></p>
+            <p></p>
+        `
     })
+    })
+
+
+    
