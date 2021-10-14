@@ -1,0 +1,25 @@
+img{
+    height: 200px;
+    grid-area: logo;
+}
+
+body{
+    background-color: lavender;
+}
+
+header{
+    width:75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    background-color: skyblue;
+    font-family: monospace;
+    display: grid;
+    grid-template-areas:
+    "logo title";
+    height: 200px;
+}
+
+h1{
+    grid-area:title;
+    width: 280px;
+}
